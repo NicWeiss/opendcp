@@ -112,8 +112,8 @@ filelist_t *get_filelist_3d(char *in_path_left, char *in_path_right) {
     filelist = filelist_alloc(left->nfiles + right->nfiles);
 
     for (x = 0; x < filelist->nfiles; y++, x += 2) {
-        snprintf(filelist->files[x], sizeof(filelist->files[x]), "%s", left->files[y]);
-        snprintf(filelist->files[x + 1], sizeof(filelist->files[x + 1]), "%s", right->files[y]);
+        snprintf(filelist->files[x], strlen(left->files[y])+1, "%s", left->files[y]);
+        snprintf(filelist->files[x + 1], strlen(right->files[y])+1, "%s", right->files[y]);
     }
 
     filelist_free(left);
