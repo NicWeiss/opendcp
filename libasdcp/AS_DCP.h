@@ -129,11 +129,11 @@ typedef unsigned int   ui32_t;
 // Returns RESULT_PTR if the given argument is NULL. See Result_t
 // below for an explanation of RESULT_* symbols. It then assumes
 // that the argument is a pointer to a string and returns
-// RESULT_NULL_STR if the first character is '\0'.
+// RESULT_NULL_STR if NULL.
 //
 #define ASDCP_TEST_NULL_STR(p) \
   ASDCP_TEST_NULL(p); \
-  if ( (p)[0] == '\0' ) { \
+  if ( (p)[0] == NULL ) { \
     return ASDCP::RESULT_NULL_STR; \
   }
 
